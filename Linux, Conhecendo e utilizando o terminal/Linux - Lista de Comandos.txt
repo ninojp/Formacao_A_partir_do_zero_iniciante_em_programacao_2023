@@ -1,0 +1,95 @@
+" " : indica que é um ARGUMENTO(string) unica, pois sem ela o ESPAÇO separa os comandos(termos)
+
+seta(tecla) pra cima ou baixo: comando anteriormente ou posteriormente digitado
+
+tab(tecla): completa o mone que está sendo digitado, se o mesmo existir (case sensitive)
+
+man: 'manual' mostra os detalhes de cada comando
+
+help: (ex: help pwd) ou (ex: pwd --help)
+O help é um comando interno do interpretador bash, que, quando executado sem parâmetros, retorna uma lista com todos os demais comandos internos do shell bash. 
+Quando executado com parâmetro, o comando help retorna a sintaxe de utilização e uma descrição do comando interno que estamos interessados.
+
+clear: Limpa a tela
+
+pwd: Mostar o diretório atual
+
+ls: Lista os diretórios e arquivos
+
+>: Direciona(cria) a saida para outro caminho (ex: echo "Bem vindo" > texto.txt)
+>>: Adiciona(não sobre Escreve) a saida para outro caminho
+<: Direciona para a entrada (ex: tar -xz < work.tar.gz) 
+
+cat: para ler o conteudo do arquivo
+Esses caracteres de ? e * são utilizados para que sejam buscados mais de um arquivo que tenham o mesmo nome base, porém existe uma pequena diferença: 
+O ? só encontra os arquivos que tenham apenas UM caractere diferente do nome base,
+Enquanto o * busca quaisquer números de caracteres.
+~/diretório: indicar qualquer caminho para o diretório (é +ou- isso, ver detalhes depois)
+
+echo: imprime uma mensagem na tela
+
+mkdir: Cria uma pasta
+
+rm: Remove o arquivo
+rmdir: Remove o diretório, se estiver vazio
+rm -r: Remove (RECURSIVO), a pasta e tudo que estiver dentro
+
+cp: Copia o arquivo (ex:cp arqOrigem pasta/arqDestino)
+cp -r: Copia(atual) e CRIA o novo diretório
+
+mv: Move o arquivo 
+
+zip: Compactar o arquivo (zip nome.zip pasta/nomeDoQueSeraZipado)
+zip -r: Compactar o arquivo(pasta) e seu conteudo
+zip -rq: Compactar o arquivo(pasta) e seu conteudo, sem exibir mensagens (-q, quite) 
+
+unzip: Descompactar o arquivo.zip
+
+tar: (ex: tar -vcz arqOrigem > nomeArqFinal.tar.gz)
+o tar serve para empacotar vários diretórios e arquivos em um único arquivo, facilitando a transferência. 
+(-v) Verbose, para exibir os detalhes da operação, (opcional)
+(-c) Created, para criar o pacote de arquivos
+(-z) para indicar que será compactado pelo zip
+(>) usado para o redirecionamento da saida. Uma observação interessante é que comando tar já é automaticamente recursivo.
+
+(ex: tar -xz < nomeArqFinal.tar.gz)
+(-x) Extract, para extrair o arquivo compactado
+(<) Que agora em vez de indicar saída de dados, indica entrada de dados.
+
+(ex: tar -czf nomeArqFinal.tar.gz arqOrigem/)
+(-f) Para não ficar usando o redirecionamento (>, <) usamos -f
+
+(ex: tar -cjf nomeArqFinal.tar.bz2 nomeArqOrigem/)
+Outro formato de compactação que podemos utilizar junto com o tar é o formato .bzip2, Mais eficiente na compactação, Porém consome um tempo maior para compactar.
+(-j) Para indicar o método de compactação
+
+touch: (ex: touch nomeArq.txt), para modificar a data de criação do arquivo
+
+date: Para exibir a data e hora atual
+date "+%d/%m/%Y" , Para definir o formato de exibição da data
+
+head: (ex: head -n 3 google.txt), Para ler somente as 3 primeiras linhas do arquivo
+
+tail: (ex: tail -n 3 google.txt), Para ler somente as 3 ultimas linhas do arquivo
+
+less: (ex: less google.txt) Que nos permite abrir e navegar pelo texto do arquivo no Terminal utilizando as setas para cima e para baixo do teclado:
+
+vi: Editor de texto
+(i): inserir caracter (esc), para sair da inserção
+(shift+a) adiciona, inserir caracter (fim da linha)
+(:w) Para salvar
+(:q) Para fechar o vi
+(x) Para excluir caracteres e 3x, 3numero de caracteres a serem excluidos
+(dd) Para excluir uma linha inteira
+(:wq) Para salvar e sair
+(:q!) Para sair sem salvar
+(Shift + g) Para ir para a ultima linha ou numero, depois Shift + g, para ir para linha de numero digitado
+($) Ir para o final da linha
+(0) Ir para o inicío da linha
+(/) Para buscarmos palavras no texto, depois digitar o termo a ser buscado, 
+(n) ir para proxima ocorrência. (shift+n) para voltar a ocorrência anterior
+
+(yy) Para copiarmos uma linha ou NUMERO(linhas) depois yy, copia o numero de linhas digitado
+(p) Para colar o numero de linhas copiado ou NUMERO depois p, colar varias vezes(numero)
+
+
